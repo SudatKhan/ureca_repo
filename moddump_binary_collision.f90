@@ -170,7 +170,7 @@ module moddump
    real                    :: x02,y02,vx02,vy02,r02, U2
   
   !
-  !-- Default runtime parameters
+  !-- These are the default runtime parameters
   !
   !
    Mh    = 1.e1   ! star mass
@@ -201,9 +201,9 @@ module moddump
    
   
    !
-   !-- Read runtime parameters from tdeparams file
+   !-- Read runtime parameters from binaryparams file
    !
-   filename = 'tde'//'.tdeparams'                                ! moddump should really know about the output file prefix...
+   filename = 'binary'//'.binaryparams'                                ! moddump should really know about the output file prefix...
    inquire(file=filename,exist=iexist)
    if (iexist) call read_setupfile(filename,ierr)
    if (.not. iexist .or. ierr /= 0) then
