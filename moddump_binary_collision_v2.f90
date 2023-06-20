@@ -351,7 +351,7 @@ module moddump
     call write_inopt(theta, 'theta', 'stellar rotation with respect to x-axis (in degrees)',iunit)
     call write_inopt(phi,   'phi',   'stellar rotation with respect to y-axis (in degrees)',iunit)
  
-    call write_inopt(ecc1,   'ecc1',   'eccentricity of planet 1',                                        iunit)                                      iunit)
+    call write_inopt(ecc1,   'ecc1',   'eccentricity of planet 1',                                        iunit)
     call write_inopt(mp1,    'mp1',    'mass of planet 1      (code units)',                     iunit)
     call write_inopt(rp1,    'rp1',    'radius of planet 1    (code units)',                     iunit)
     call write_inopt(a1,      'a1',    'initial SMA of planet 1',                                         iunit)
