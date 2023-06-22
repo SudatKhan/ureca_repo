@@ -348,8 +348,7 @@ module moddump
     call write_inopt(v_x1,    'v_x1',  'x-component of planet 1 velocity', iunit)
     call write_inopt(v_y1, 'v_y1', 'y-component of planet 1 velocity', iunit)
  
-    call write_inopt(ecc2,   'ecc2',   'eccentricity of planet 2',                                        iunit)
-    call write_inopt(nu2,    'nu2',    'true anomaly of planet 2',                                        iunit)
+    call write_inopt(ecc2,   'ecc2',   'eccentricity of planet 2',                                        iunit)                                      iunit)
     call write_inopt(mp2,    'mp2',    'mass of planet 2     (code units)',                     iunit)
     call write_inopt(rp2,    'rp2',    'radius of planet 2    (code units)',                     iunit)
     call write_inopt(a2,    'a2',    'initial SMA of planet 2',                                         iunit)
@@ -390,7 +389,6 @@ module moddump
 
  
     call read_inopt(ecc2,   'ecc2',   db,min=0.,errcount=nerr)
-    call read_inopt(nu2,    'nu2',    db,min=0.,errcount=nerr)
     call read_inopt(mp2,    'mp2',    db,min=0.,errcount=nerr)
     call read_inopt(rp2,    'rp2',    db,min=0.,errcount=nerr)
     call read_inopt(a2,    'a2',    db,min=0.,errcount=nerr)
