@@ -17,10 +17,6 @@ module moddump
     real :: rp2 ! radius of planet 2
     real :: theta 
     real :: phi
-    real :: a1  ! semi-major axis of planet 1
-    real :: a2  ! semi-major axis of planet 2
-    real :: ecc1 ! ecccentricity of planet 1
-    real :: ecc2 ! eccentricity of planet 2
     real :: x1 ! x-position of planet 1
     real :: y1 ! y-position of planet 1
     real :: v_x1 ! x-component of planet 1 velocity
@@ -281,7 +277,7 @@ module moddump
        enddo
     endif
    
-    !--Putting star into orbit
+    !--Putting planet into orbit
     do i = 1, n_id
        xyzh(1,i)  = xyzh(1,i)  + x01
        xyzh(2,i)  = xyzh(2,i)  + y01
@@ -334,9 +330,7 @@ module moddump
     return
    end subroutine modify_dump
    
-   !
-   !---Read/write setup file--------------------------------------------------
-   !
+   !---Read/write setup file
    subroutine write_setupfile(filename)
     use infile_utils, only:write_inopt
     character(len=*), intent(in) :: filename
@@ -346,10 +340,8 @@ module moddump
     open(unit=iunit,file=filename,status='replace',form='formatted')
     write(iunit,"(a)") '# parameters file for a TDE phantommodump'
     call write_inopt(n_id,    'n_id',    'last id of sph particle in planet 1',                     iunit)
-    call write_inopt(mh,    'mh',    'mass of star (code units)',                     iunit)
-    call write_inopt(rs,    'rs',    'accretion radius (code units)',                     iunit)
-    call write_inopt(theta, 'theta', 'stellar rotation with respect to x-axis (in degrees)',iunit)
-    call write_inopt(phi,   'phi',   'stellar rotation with respect to y-axis (in degrees)',iunit)
+    call write_inopt(mh,    'mh',    'mass of star (code units)',     iunit)
+    call write_inopt(rs,    'rs',    'accretion radius (code units)', iunit)
  
     call write_inopt(ecc1,   'ecc1',   'eccentricity of planet 1',                                        iunit)
     call write_inopt(mp1,    'mp1',    'mass of planet 1      (code units)',                     iunit)
@@ -390,8 +382,6 @@ module moddump
     call read_inopt(n_id,    'n_id',    db,min=0,errcount=nerr)
     call read_inopt(mh,    'mh',    db,min=0.,errcount=nerr)
     call read_inopt(rs,    'rs',    db,min=0.,errcount=nerr)
-    call read_inopt(theta, 'theta', db,min=0.,errcount=nerr)
-    call read_inopt(phi,   'phi',   db,min=0.,errcount=nerr)
  
     call read_inopt(ecc1,   'ecc1',   db,min=0.,errcount=nerr)
     call read_inopt(mp1,    'mp1',    db,min=0.,errcount=nerr)
