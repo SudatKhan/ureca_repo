@@ -11,20 +11,16 @@ module moddump
    
     real :: mh ! central star mass
     real :: rs ! star accretion radius
-    real :: mp1 ! mass of planet 1
-    real :: mp2 ! mass of planet 2
-    real :: rp1 ! radius of planet 1
-    real :: rp2 ! radius of planet 2
+    real :: mp1, mp2 ! mass of planet 1,2
+    real :: rp1, rp2 ! radius of planet 1,2
     real :: theta 
     real :: phi
-    real :: x1 ! x-position of planet 1
-    real :: y1 ! y-position of planet 1
-    real :: v_x1 ! x-component of planet 1 velocity
-    real :: v_y1  ! y-component of planet 1 velocity
-    real :: x2 ! x-position of planet 2
-    real :: y2 ! y-position of planet 2
-    real :: v_x2 ! x-component of planet 2 velocity
-    real :: v_y2  ! y-component of planet 2 velocity
+    real :: a1, a2 ! semi-major axis of planet 1,2
+    real :: ecc1, ecc2 ! eccentricity of planet 1,2 
+    real :: x1, x2 ! x-position of planet 1,2
+    real :: y1, y2 ! y-position of planet 1,2
+    real :: v_x1, v_x2 ! x-component of planet 1,2 velocity
+    real :: v_y1, v_y2  ! y-component of planet 1,2 velocity
     integer :: n_id !number of particles in the dump file
  
    contains
