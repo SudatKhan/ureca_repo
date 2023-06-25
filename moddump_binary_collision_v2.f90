@@ -383,7 +383,7 @@ module moddump
     call read_inopt(rp1,    'rp1',    db,min=0.,errcount=nerr)
     call read_inopt(a1,    'a1',    db,min=0.,errcount=nerr)
     call read_inopt(x1, 'x1', db,min=0.,errcount=nerr)
-    call read_inopt(y1, 'y1', db,min=0.,errcount=nerr)
+    call read_inopt(y1, 'y1', db,min=-1.,errcount=nerr)
     call read_inopt(v_x1, 'v_x1', db,min=0.,errcount=nerr)
     call read_inopt(v_y1, 'v_y1', db,min=0.,errcount=nerr)
 
@@ -393,7 +393,7 @@ module moddump
     call read_inopt(rp2,    'rp2',    db,min=0.,errcount=nerr)
     call read_inopt(a2,    'a2',    db,min=0.,errcount=nerr)
     call read_inopt(x2, 'x2', db,min=0.,errcount=nerr)
-    call read_inopt(y2, 'y2', db,min=0.,errcount=nerr)
+    call read_inopt(y2, 'y2', db,min=-1.,errcount=nerr)
     call read_inopt(v_x2, 'v_x2', db,min=0.,errcount=nerr)
     call read_inopt(v_y2, 'v_y2', db,min=0.,errcount=nerr)  
    
